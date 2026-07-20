@@ -1,0 +1,37 @@
+# Fichiers secrets / d'environnement
+.env
+
+# Gradle & Build
+.gradle/
+build/
+
+# Ne PAS ignorer le wrapper Gradle (nécessaire pour exécuter gradlew)
+!gradle/wrapper/gradle-wrapper.jar
+
+# IntelliJ IDEA
+.idea/
+*.iws
+*.iml
+*.ipr
+out/
+
+# Eclipse / STS
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+bin/
+
+# NetBeans & VS Code
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+.vscode/
+
+# Divers
+HELP.md
