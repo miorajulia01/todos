@@ -1,4 +1,4 @@
-package mg.agricole.demotestintegration.modele;
+package mg.agricole.demotestintegration.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

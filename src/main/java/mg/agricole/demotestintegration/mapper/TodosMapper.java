@@ -1,7 +1,7 @@
 package mg.agricole.demotestintegration.mapper;
 
 import mg.agricole.demotestintegration.entity.TodosEntity;
-import mg.agricole.demotestintegration.modele.Todos;
+import mg.agricole.demotestintegration.model.Todos;
 import org.springframework.stereotype.Component;
 
 @Component

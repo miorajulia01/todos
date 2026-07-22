@@ -3,9 +3,8 @@ package mg.agricole.demotestintegration.service;
 
 import mg.agricole.demotestintegration.entity.TodosEntity;
 import mg.agricole.demotestintegration.mapper.TodosMapper;
-import mg.agricole.demotestintegration.modele.Todos;
+import mg.agricole.demotestintegration.model.Todos;
 import mg.agricole.demotestintegration.repository.TodosRepository;
-import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.stream.Collectors;
