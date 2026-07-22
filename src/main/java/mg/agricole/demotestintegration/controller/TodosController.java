@@ -1,6 +1,6 @@
 package mg.agricole.demotestintegration.controller;
 
-import mg.agricole.demotestintegration.modele.Todos;
+import mg.agricole.demotestintegration.model.Todos;
 import mg.agricole.demotestintegration.service.TodosService;
 import org.springframework.web.bind.annotation.*;
 

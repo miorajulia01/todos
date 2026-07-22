@@ -2,7 +2,7 @@ package mg.agricole.demotestintegration.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import mg.agricole.demotestintegration.exception.NotFoundException;
-import mg.agricole.demotestintegration.modele.Todos;
+import mg.agricole.demotestintegration.model.Todos;
 import mg.agricole.demotestintegration.service.TodosService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
