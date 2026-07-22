@@ -1,0 +1,73 @@
+openapi: "3.1.0"
+info:
+  title: "demoTestIntegration API"
+  description: "faire un todo list pour appréhendé le test container"
+  version: "1.0.0"
+servers:
+  - url: "https://demoTestIntegration"
+paths:
+  /todos:
+    get:
+      summary: "GET todos"
+      operationId: "getAllTodos"
+      responses:
+        "200":
+          description: "OK"
+          content:
+            '*/*':
+              schema:
+                type: "array"
+                items:
+                  $ref: "#/components/schemas/Todos"
+    put:
+      summary: "PUT todos"
+      operationId: "saveOrUpdateTodo"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Todos"
+        required: true
+      responses:
+        "200":
+          description: "OK"
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/Todos"
+  /todos/{id}:
+    get:
+      summary: "GET todos/{id}"
+      operationId: "getTodosById"
+      parameters:
+        - name: "id"
+          in: "path"
+          required: true
+          schema:
+            type: "string"
+      responses:
+        "200":
+          description: "OK"
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/Todos"
+components:
+  schemas:
+    Todos:
+      type: "object"
+      properties:
+        id:
+          type: "string"
+        title:
+          type: "string"
+        description:
+          type: "string"
+        isCompleted:
+          type: "boolean"
+        createdAt:
+          type: "string"
+          format: "date-time"
+        updatedAt:
+          type: "string"
+          format: "date-time"
