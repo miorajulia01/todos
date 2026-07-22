@@ -1,15 +1,15 @@
 package mg.agricole.demotestintegration.service;
 
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
+
 import mg.agricole.demotestintegration.entity.TodosEntity;
 import mg.agricole.demotestintegration.mapper.TodosMapper;
 import mg.agricole.demotestintegration.modele.Todos;
 import mg.agricole.demotestintegration.repository.TodosRepository;
+import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 import java.util.stream.Collectors;
+import mg.agricole.demotestintegration.exception.NotFoundException;
 
 @Service
 public class TodosService {
@@ -28,8 +28,8 @@ public class TodosService {
     }
 
     public Todos getById(String id){
-        TodosEntity entity = repository.findById(id).orElse(null);
-        return mapper.toModel(entity);
+        TodosEntity entity = repository.findById(id)
+                .orElseThrow(() -> new NotFoundException("Todo with id " + id + " not found"));        return mapper.toModel(entity);
     }
 
     public Todos saveOrUpdateTodos(Todos model){
