@@ -18,15 +18,12 @@ import static org.assertj.core.api.Assertions.assertThat;
 class TodosIntegrationTest {
 
     static {
-        // Force Testcontainers à utiliser le socket standard de Docker Desktop sous Windows
         System.setProperty("DOCKER_HOST", "npipe:////./pipe/docker_engine");
         System.setProperty("api.version", "1.43");
     }
-    // Démarre un vrai conteneur PostgreSQL en arrière-plan pour le test
     @Container
     static PostgreSQLContainer<?> postgres = new PostgreSQLContainer<>("postgres:15-alpine");
 
-    // Connecte automatiquement Spring Boot à ce conteneur Docker
     @DynamicPropertySource
     static void configureProperties(DynamicPropertyRegistry registry) {
         registry.add("spring.datasource.url", postgres::getJdbcUrl);
@@ -39,10 +36,8 @@ class TodosIntegrationTest {
 
     @Test
     void test_get_todos() {
-        // Fait une requête HTTP sur ton API pour vérifier qu'elle répond bien avec le conteneur
         Todos[] todos = restTemplate.getForObject("/todos", Todos[].class);
 
-        // Vérifie que le résultat n'est pas null (la base est vide au départ, mais l'API répond 200 OK)
         assertThat(todos).isNotNull();
     }
 }
