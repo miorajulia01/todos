@@ -12,6 +12,7 @@ public class TodosMapper {
         model.setId(entity.getId());
         model.setTitle(entity.getTitle());
         model.setDescription(entity.getDescription());
+        model.setIsCompleted(entity.isCompleted());
         model.setCreatedAt(entity.getCreatedAt());
         model.setUpdatedAt(entity.getUpdatedAt());
         return model;
@@ -23,6 +24,7 @@ public class TodosMapper {
         entity.setId(model.getId());
         entity.setTitle(model.getTitle());
         entity.setDescription(model.getDescription());
+        entity.setCompleted(model.getIsCompleted());
         entity.setCreatedAt(model.getCreatedAt());
         entity.setUpdatedAt(model.getUpdatedAt());
         return entity;
