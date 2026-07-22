@@ -27,9 +27,10 @@ public class TodosService {
                 .collect(Collectors.toList());
     }
 
-    public Todos getById(String id){
+    public Todos getById(String id) {
         TodosEntity entity = repository.findById(id)
-                .orElseThrow(() -> new NotFoundException("Todo with id " + id + " not found"));        return mapper.toModel(entity);
+                .orElseThrow(() -> new NotFoundException("Todo with id " + id + " not found"));
+        return mapper.toModel(entity);
     }
 
     public Todos saveOrUpdateTodos(Todos model){
