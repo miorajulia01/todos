@@ -14,6 +14,7 @@ import java.time.OffsetDateTime;
 @AllArgsConstructor
 public class TodosEntity {
     @Id
+    @GeneratedValue(strategy = GenerationType.UUID)
     @Column(name= "id", updatable = false, nullable = false)
     private String id;
 
@@ -23,7 +24,7 @@ public class TodosEntity {
     private String description;
 
     @Column(name = "is_completed")
-    private boolean completed;
+    private boolean isCompleted;
 
     @Column(name = "created_at", insertable = false, updatable = false)
     private OffsetDateTime createdAt;
